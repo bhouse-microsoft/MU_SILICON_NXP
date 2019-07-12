@@ -13,14 +13,32 @@
 *
 */
 
-Device (IDD0)
+Device (DIS0)
 {
-  Name (_HID, "NXPI0114")
-  Name (_UID, 0x1)
+  Name (_HID, "NXPI1234")
+  Name (_CID, "NXPI1234")
+  Name (_UID, 0)
+
+  Name (_CRS, ResourceTemplate () {
+    // CCM
+    MEMORY32FIXED( ReadWrite, 0x30380000, 0x10000, )
+
+    // GPC
+    MEMORY32FIXED( ReadWrite, 0x303A0000, 0x10000, )
+
+    // DC_MST0-3
+    MEMORY32FIXED( ReadWrite, 0x32E00000, 0x40000, )
+
+    // HDMI_SEC
+    MEMORY32FIXED( ReadWrite, 0x32E40000, 0x10000, )
+
+    // HDMI_CTRL
+    MEMORY32FIXED( ReadWrite, 0x32C00000, 0x100000, )
+  })
 
   Method (_STA)
   {
-    Return(0x0)
+    Return(0xf)
   }
 }
 
