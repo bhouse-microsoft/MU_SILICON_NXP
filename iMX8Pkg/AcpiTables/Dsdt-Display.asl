@@ -42,4 +42,15 @@ Device (DIS0)
   }
 }
 
+Device (IDD0)
+{
+  Name (_HID, "NXPI1235")
+  Name (_CID, "NXPI1235")
+  Name (_UID, 0)
+
+  Method (_STA)
+  {
+    Return(0x0)
+  }
+}
 
