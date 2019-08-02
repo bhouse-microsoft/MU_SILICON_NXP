@@ -50,7 +50,7 @@ Device (IDD0)
 
   Method (_STA)
   {
-    Return(0x0)
+    Return(0xf)
   }
 }
 
